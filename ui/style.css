@@ -1,6 +1,5 @@
 body {
     font-family: sans-serif;
-    background-image : url(poly.png);
     
     margin-top: 75px;
 }
@@ -23,7 +22,6 @@ body {
 .container{
             max-width: 800px;
             margin: 0 auto;
-            background-color: white;
             padding-top: 90px;
             color: #5d4949;
             padding-left: 20px;
