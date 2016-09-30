@@ -3,18 +3,18 @@
 var button = document.getElementById('counter');
 var counter = 0;
 
-button.onclick = function(){
+button.onclick = function () {
     
     //create a request object
     
     var request = new XMLHttpRequest();
     // Capture the response and store it as a variable
     
-    request.onreadystatechange = function(){
+    request.onreadystatechange = function () {
         
-        if(request.readyState === XMLHttpRequest.DONE){
+        if(request.readyState === XMLHttpRequest.DONE) {
             //take some action
-            if (request.status === 200){
+            if (request.status === 200) {
                 var counter = request.responseText;
                 var span = document.getElementById('count');
                 span.innnerHTML = counter.toString();
