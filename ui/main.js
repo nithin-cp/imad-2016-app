@@ -5,14 +5,26 @@ var counter = 0;
 
 button.onclick = function(){
     
-    //make a request to the count endpoint
+    //create a request object
     
+    var request = new XMLHttpRequest();
     // Capture the response and store it as a variable
     
-    // Render the variable in correct span.
+    request.onreadychangestate = fucntion(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            //take some action
+            if (request.status === 200){
+                var counter = request.responseText;
+                var span = document.getElementById('count');
+                span.innnerHTML = counter.toString();
     
-    counter = counter + 1 ;
-    var span = document.getElementById('count');
-    span.innnerHTML = counter.toString();
+                
+            }
+        }
+        //not done yet
+    };
     
+    // make a request
+    request.open('GET', 'http://nithin-cp.imad.hasura-app.io/counter', true);
+    request.send(null); 
 };
